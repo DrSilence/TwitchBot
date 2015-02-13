@@ -1,0 +1,20 @@
+BIN		= TwitchBot
+VERSION	= 0.0.0.1
+CC		= /usr/bin/gcc 
+CFLAGS	= -Wall -g -D_REENTRANT -DVERSION=\"$(VERSION)\"
+LDFLAGS	= -lm -lpthread
+
+DIRS	= ./src 
+OBJ	= main.o
+
+$(BIN): $(OBJ)
+	$(CC) $(CFLAGS) -o $(BIN) $(OBJ) $(LDFLAGS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $<
+
+.PHONY: clean
+clean:
+	rm -rf $(BIN) $(OBJ)
+
+

@@ -1,0 +1,11 @@
+BIN			= TwitchBot
+VERSION		= 0.0.0.1
+DEPENDFILE	= .depend 
+
+CC		= /usr/bin/gcc 
+CFLAGS	= -Wall -g -D_REENTRANT -DVERSION=\"$(VERSION)\"
+LDFLAGS	= -lm -lpthread
+
+#%.o: %.c
+#	$(CC) $(CFLAGS) -c $<
+
